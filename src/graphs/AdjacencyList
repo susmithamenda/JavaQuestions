@@ -1,0 +1,32 @@
+package graphs;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+
+public class AdjacencyList {
+
+	ArrayList<Integer> vertices = new ArrayList<Integer>();
+	LinkedList<Integer> edges;
+	
+	public AdjacencyList(int size){
+		
+		for(int i =0; i < size; i++){
+			vertices.add(i);
+			edges = new LinkedList<Integer>();
+		}
+		
+	}
+	
+	public void addEdges(int source, int destination){
+		
+		int i = vertices.indexOf(source);
+		int j = vertices.indexOf(destination);
+		
+		if(i != -1 || j != -1){
+			edges.addFirst(destination);
+			edges.addFirst(source);
+		}
+		
+	}
+	
+}
